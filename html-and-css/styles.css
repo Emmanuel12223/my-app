@@ -1,0 +1,40 @@
+/* Apply styles to the entire page */
+body {
+   font-family: Arial, sans-serif;
+   margin: 20px;
+}
+
+/* Style the table */
+table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+/* Style table header cells */
+th {
+   background-color: silver;
+   font-weight: bold;
+   padding: 8px;
+   text-align: left;
+}
+
+/* Style alternate table rows */
+tr:nth-child(even) {
+   background-color: #f2f2f2;
+}
+
+/* Style table cells */
+td {
+   padding: 8px;
+   border: 1px solid #ddd;
+}
+
+/* Apply specific styles to cells with class 'medium' */
+td.medium {
+   font-size: 14px;
+}
+
+/* Apply specific styles to cells with class 'normal' */
+td.normal {
+   font-size: 12px;
+}
