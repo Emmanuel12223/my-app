@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Overwatch League</title>
+</head>
+<body>
+    <div id="logo-container">
+        <img src="Overwatch-League-Logo.png" alt="Overwatch-League-Logo">
+    </div>
+    <div id="welcome-text" class="hidden">
+        <p>WELCOME TO OVERWATCH LEAGUE WEBSITE</p>
+        <p>WHERE DREAMERS CHANGE THE WORLD</p>
+    </div>
+    <div id="team-buttons">
+        <!-- Buttons for each team -->
+        <button class="team-button" onclick="selectTeam('Team1')">
+            <img src="team1-logo.png" alt="Team1 Logo">
+        </button>
+        <!-- Add more buttons for other teams -->
+
+        <!-- Button for displaying all teams -->
+        <button class="all-teams-button" onclick="displayAllTeams()">Show All Teams</button>
+    </div>
+
+    <script src="HPscript.js" defer></script>
+</body>
+</html>

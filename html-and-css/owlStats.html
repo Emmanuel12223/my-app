@@ -1,11 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Data</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="filter.js" defer></script>
     </head>
 <body>
-<table border=1>
+
+    <label for="teamFilter">Filter by Team:</label>
+    <select id="teamFilter" aria-label="Team Filter" onchange="filterTable()">
+        <option value="">All Teams</option>
+        <option value="Los Angeles Valiant">Los Angeles Valiant</option>
+        <!-- Add other team names as options -->
+    </select>
+    
+    <label for="mapFilter">Filter by Team:</label>
+    <select id="mapFilter" onchange="filterTable()">
+        <option value="">All Maps</option>
+        <option value="Ilios">Ilios</option>
+        <!-- Add other map names as options -->
+    </select>
+    
+
+<table border=1 id="dataTable">
 <tr>
 <td bgcolor=silver class='medium'>Round Start Time</td>
 <td bgcolor=silver class='medium'>Round End Time</td>
