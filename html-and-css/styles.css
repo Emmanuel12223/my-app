@@ -8,9 +8,10 @@ body {
 table {
    width: 100%;
    border-collapse: collapse;
+   margin-top: 20px; /* Add margin to create space for the fixed header */
 }
 
-/* Style table header cells */
+/* Table header cells */
 th {
    background-color: silver;
    font-weight: bold;
@@ -18,15 +19,17 @@ th {
    text-align: left;
 }
 
-/* Style alternate table rows */
+/* Alternate table rows */
 tr:nth-child(even) {
    background-color: #f2f2f2;
 }
 
-/* Style table cells */
+/* Table cells */
 td {
    padding: 8px;
    border: 1px solid #ddd;
+   overflow: hidden; /* Hide content that overflows the cell */
+   text-overflow: ellipsis; /* Display an ellipsis (...) when content overflows */
 }
 
 /* Apply specific styles to cells with class 'medium' */
@@ -37,62 +40,13 @@ td.medium {
 /* Apply specific styles to cells with class 'normal' */
 td.normal {
    font-size: 12px;
+   white-space: nowrap; /* Prevent text wrapping in regular cells */
 }
 
-body {
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
+/* Fixed header styles */
+.fixed-header {
+   position: sticky;
+   top: 0;
+   z-index: 1;
+   background-color: silver;
 }
-
-#logo-container {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   opacity: 0;
-   transition: opacity 1s ease-in-out;
-}
-
-#welcome-text {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   opacity: 0;
-   transition: opacity 1s ease-in-out;
-}
-
-.hidden {
-   display: none;
-}
-
-#team-buttons {
-   display: flex;
-   justify-content: center;
-   margin-top: 20px;
-}
-
-.team-button {
-   margin: 0 10px;
-   padding: 10px;
-   background-color: #3498db;
-   border: none;
-   cursor: pointer;
-   transition: transform 0.3s ease-in-out;
-}
-
-.team-button img {
-   width: 50px; /* Adjust the size of the team logos */
-   height: 50px;
-   border-radius: 50%; /* Make the logos circular */
-}
-
-.all-teams-button {
-   margin-top: 20px;
-   padding: 10px;
-   background-color: #2ecc71;
-   border: none;
-   cursor: pointer;
-}
-
