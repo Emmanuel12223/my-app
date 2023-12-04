@@ -9515,12 +9515,17 @@
 </tr>
 </table>
    <script>
+      
+        
     // search and fixed header
     document.addEventListener("DOMContentLoaded", function () {
+
+        setSearchInputValue();
+        
        var searchInput = document.getElementById("searchInput");
        var table = document.querySelector(".sortable");
        var header = table.querySelector("thead");
-
+      
        // init an array to store the original display property of each row
        var originalDisplay = [];
 
@@ -9559,6 +9564,17 @@
              }
           }
        }
+       function getSearchParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('search') || ''; // Returns an empty string if search parameter is not present
+        }
+
+        // Function to set the search input value
+        function setSearchInputValue() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = getSearchParameter();
+            
+        }
 
        // event listener for scrolling to make the header fixed
        window.addEventListener("scroll", function () {

@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to navigate to a specific team's page
     function selectTeam(teamName) {
-        // Set filter parameters in the URL
-        const queryParams = new URLSearchParams(window.location.search);
-        queryParams.set('team', teamName);
+        const searchTerm = teamName;  // Replace with your desired search term
+            
+        // Navigate to the target HTML page with the search parameter
+        window.location.href = `owl stats 2018.html?search=${searchTerm}`;
         
-        // Navigate to the same page with filter parameters
-        window.location.href = `${window.location.pathname}?${queryParams.toString()}`;
     }
+
 
     // Function to read filter parameters from the URL
     function readFilterParameters() {
@@ -57,10 +57,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Read filter parameters on page load
-    readFilterParameters();
-
-    // Attach the filterTable function to the input's onchange event
-    document.getElementById("teamFilter").addEventListener("change", readFilterParameters);
-    document.getElementById("mapFilter").addEventListener("change", readFilterParameters);
+    
+  
 });
+
+document.getElementById("all-teams-button").addEventListener("click", function() {
+    window.location.href = './owl stats 2018.html';
+});
+
+ // Function to handle team button clicks
+ function selectTeam(teamName) {
+    const searchTerm = teamName;  // Replace with your desired search term
+
+    // Navigate to the target HTML page with the search parameter
+     window.location.href = `owl stats 2018.html?search=${searchTerm}`;
+    
+}
+
+// Get all elements with the class "team-button"
+const teamButtons = document.getElementsByClassName("team-button");
+
+// Add click event listener to each button
+for (const button of teamButtons) {
+    button.addEventListener("click", function() {
+        // Get the team name from the button's onclick attribute
+        const teamName = button.getAttribute("onclick").match(/'([^']+)'/)[1];
+
+        // Call the selectTeam function with the extracted team name
+        selectTeam(teamName);
+    });
+}
